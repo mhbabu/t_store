@@ -4,6 +4,7 @@ import 'package:t_store/features/authentication/screens/onboarding/widgets/onboa
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:t_store/utils/constants/image_string.dart';
 import 'package:t_store/utils/constants/text_string.dart';
+import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -38,7 +39,10 @@ class OnBoardingScreen extends StatelessWidget {
           const OnBoardingSkip(),
 
           // Dot Nagator Smooth Page Indicator
-          OnBoardingNavigation(),
+          const OnBoardingNavigation(),
+
+          //Circular Next Button
+          const OnBoardingNextButton(),
         ],
       ),
     );
