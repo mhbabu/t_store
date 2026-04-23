@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:t_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/device/device_utility.dart';
@@ -10,6 +11,7 @@ class OnBoardingNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = OnBoardingController.instance; // Access the controller instance using GetX
   final dark = THelperFunctions.isDarkMode(context);
 
 
@@ -18,7 +20,8 @@ class OnBoardingNavigation extends StatelessWidget {
       left: TSizes.defaultSpace,
     
       child: SmoothPageIndicator(
-        controller: PageController(),
+        controller: controller.pageController,
+        onDotClicked: controller.dotNavigationClick,
         count: 3,
         effect: ExpandingDotsEffect(
           activeDotColor: dark ?TColors.light : TColors.dark,

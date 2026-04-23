@@ -6,7 +6,7 @@ class OnBoardingController extends GetxController {
 
   /// Variables
   final pageController = PageController();
-  RxInt currentPageIndex = 0.obs;
+  Rx<int> currentPageIndex = 0.obs;
 
   /// Update Current Index when Page Scroll
   void updatePageIndicator(int index) {
@@ -23,6 +23,7 @@ class OnBoardingController extends GetxController {
   void nextPage() {
     if (currentPageIndex.value == 2) {
       // Last page reached
+      // Get.to(LoginScreen()); // Navigate to the login screen  
       skipPage();
     } else {
       int nextPage = currentPageIndex.value + 1;
